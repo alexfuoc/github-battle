@@ -5,7 +5,6 @@ html, body, #app {
 }
 
 body {
-   background-color: burlywood;
    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif;
 }
 
@@ -39,4 +38,76 @@ li {
    font-weight: bold;
    text-decoration: none;
    color: inherit;
+}
+
+.grid {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.space-around {
+   justify-content: space-around;
+}
+
+.header-lg {
+   font-size: 35px;
+   font-weight: 300;
+   margin: 20px;
+}
+
+.center-text {
+   text-align: center;
+}
+
+.avatar {
+   width: 150px;
+   height: 150px;
+   border-radius: 3px;
+   margin: 0 auto;
+   display: block;
+}
+
+.link {
+   color: rgb(187, 46, 31);
+   text-decoration: none;
+   font-weight: bold;
+}
+
+.cardList {
+   margin: 20px 0;
+   font-size: 20px;
+}
+
+.cardList li {
+   display: flex;
+   align-items: center;
+   margin: 10px;
+}
+
+.cardList svg {
+   margin-right: 10px;
+}
+
+.cardList a {
+   font-weight: 500;
+   color: inherit;
+}
+
+.bg-light {
+   background-color: rgba(0, 0, 0, 0.1);
+   border-radius: 3px;
+}
+
+.repo {
+   margin: 10px 0;
+   width: 250px;
+   padding: 20px;
+}
+
+.repo a {
+   text-decoration: none;
+}
+
+.repo img {
+   margin-bottom: 8px;
 }
