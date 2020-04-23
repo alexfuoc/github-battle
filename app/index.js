@@ -10,7 +10,7 @@ export default class App extends React.Component {
       return (
          <div>
             <div>
-               <Battle />
+               <Popular />
             </div>
          </div>
       )
