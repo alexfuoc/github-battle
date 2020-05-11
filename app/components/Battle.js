@@ -37,19 +37,22 @@ class PlayerInput extends React.Component {
       this.handleSubmit = this.handleSubmit.bind(this)
       this.handleChange = this.handleChange.bind(this)
    }
+
    handleSubmit(event){
       event.preventDefault()
 
       this.props.onSubmit(this.state.username)
    }
+
    handleChange(event) {
       this.setState({
          username: event.target.value
       })
    }
+
    render() {
       return (
-            <form className='column player' onSubmit = {this.handleSubmit}>
+            <form className='column player' onSubmit={this.handleSubmit}>
                <label htmlFor='username' className='player-label'>
                   {this.props.label}
                </label>
@@ -87,7 +90,7 @@ export default class Battle extends React.Component {
       return (
          <React.Fragment >
             <Instructions />
-            <PlayerInput label='Label!' value={() => console.log('value!',value)}/>
+            <PlayerInput label='Label!' value={(value) => console.log('value!',value)}/>
          </React.Fragment>
       )
    }
