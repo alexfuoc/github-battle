@@ -104,17 +104,17 @@ li {
    border-radius: 3px;
 }
 
-.repo {
+.card {
    margin: 10px 0;
    width: 250px;
    padding: 20px;
 }
 
-.repo a {
+.card a {
    text-decoration: none;
 }
 
-.repo img {
+.card img {
    margin-bottom: 8px;
 }
 
@@ -178,7 +178,7 @@ li {
    background: rgba(0, 0, 0, 0.02);
 }
 
-.player-inputs {
+.player-inputs button{
    flex: 1;
    margin-left: 10px;
 }
@@ -198,12 +198,44 @@ li {
    max-width: 200px;
 }
 
-.dark-btn {
+.btn-dark {
    color: #e6e6e6;
    background-color: #141414;
 }
 
-.dark-btn:disabled {
+.btn-dark:disabled {
    background-color: #f2f2f2;
    color: #c7c7c7;
+}
+
+.players-container {
+   margin: 100px 0;
+}
+
+.avatar-small {
+   width: 55px;
+   height: 55px;
+   border-radius: 50%;
+}
+
+.player-info {
+   display: flex;
+   flex: 1;
+   align-items: center;
+   font: 20px;
+   padding: 10px;
+}
+
+.player-info .link {
+   margin-left: 10px;
+}
+
+.btn-space {
+   margin: 40px auto;
+}
+
+.error { 
+   color: tomato;
+   font-size: 20px;
+   margin: 50px 0;
 }
