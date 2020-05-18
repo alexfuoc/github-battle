@@ -4,6 +4,7 @@ import { fetchPopularRepos } from '../utils/api'
 import { FaGithub, FaJs, FaJava, FaCss3Alt, FaPython, FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from "react-icons/fa";
 import { GoRuby } from "react-icons/go";
 import Card from './Card';
+import Loading from './Loading';
 
 function LanguagesNav({selected, onUpdateLanguage}){
    const languages = ['All', 'Javascript', 'Java', 'CSS', 'Python', 'Ruby'];
@@ -127,7 +128,7 @@ export default class Popular extends React.Component {
                onUpdateLanguage={this.updateLanguage}
             />
 
-            {this.isLoading() && <p>LOADING</p>}
+            {this.isLoading() && <Loading text='Fetching Repos'/>}
 
             {error && <p className = 'center-text error'>{error}</p>}
 

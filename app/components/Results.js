@@ -9,7 +9,8 @@ import {
   FaBriefcase
 } from 'react-icons/fa';
 import Card from './Card';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import Loading from './Loading';
 
 function ProfileList ({ profile }){
   return (
@@ -46,7 +47,7 @@ function ProfileList ({ profile }){
   );
 }
 
-ProfileList.PropTypes = {
+ProfileList.propTypes = {
   profile: PropTypes.object.isRequired,
 }
 
@@ -84,7 +85,7 @@ export default class Results extends React.Component {
    render() {
       const { winner, loser, error, loading} = this.state;
       if(loading){
-         return <h1>LOADING...</h1>
+         return <Loading />
       }
       if(error){
          return <p className='center-text error'>ERROR: {error}</p> 
