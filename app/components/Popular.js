@@ -5,6 +5,7 @@ import { FaGithub, FaJs, FaJava, FaCss3Alt, FaPython, FaUser, FaStar, FaCodeBran
 import { GoRuby } from "react-icons/go";
 import Card from './Card';
 import Loading from './Loading';
+import ToolTip from './Tooltip';
 
 function LanguagesNav({selected, onUpdateLanguage}){
    const languages = ['All', 'Javascript', 'Java', 'CSS', 'Python', 'Ruby'];
@@ -25,7 +26,7 @@ function LanguagesNav({selected, onUpdateLanguage}){
    )
 }
 
-LanguagesNav.PropTypes = {
+LanguagesNav.propType = {
    selected: PropTypes.string.isRequired,
    onUpdateLanguage: PropTypes.func.isRequired,
 }
@@ -36,37 +37,40 @@ function ReposGrid({ repos }) {
             {repos.map((repo, index) => {
                const {name, owner, html_url, stargazers_count, forks, open_issues } = repo
                const {login, avatar_url} = owner
-               return(
-                  <li key={html_url}>
-                  <Card
+               return (
+                 <li key={html_url}>
+                   <Card
                      header={`#${index + 1}`}
                      avatar={avatar_url}
                      href={html_url}
                      name={login}
-                  >
-                     <ul className='cardList'>
-                        <li>
-                           <FaUser color='rgb(255, 191, 116)' size={22}/>
-                           <a href={`https://github.com/${login}`}>
-                              {login}
-                           </a>
-                        </li>
-                        <li>
-                           <FaStar color='rgb(255, 215, 0)' size={22}/>
-                           {stargazers_count.toLocaleString()} stars
-                        </li>
-                        <li>
-                           <FaCodeBranch color='rgb(129, 195, 245)' size={22}/>
-                           {forks.toLocaleString()} forks
-                        </li>
-                        <li>
-                           <FaExclamationTriangle color='rgb(241, 138, 12)' size={22}/>
-                           {open_issues.toLocaleString()} open issues
-                        </li>
+                   >
+                     <ul className="cardList">
+                       <li>
+                         <ToolTip text="Github Username">
+                           <FaUser color="rgb(255, 191, 116)" size={22} />
+                           <a href={`https://github.com/${login}`}>{login}</a>
+                         </ToolTip>
+                       </li>
+                       <li>
+                         <FaStar color="rgb(255, 215, 0)" size={22} />
+                         {stargazers_count.toLocaleString()} stars
+                       </li>
+                       <li>
+                         <FaCodeBranch color="rgb(129, 195, 245)" size={22} />
+                         {forks.toLocaleString()} forks
+                       </li>
+                       <li>
+                         <FaExclamationTriangle
+                           color="rgb(241, 138, 12)"
+                           size={22}
+                         />
+                         {open_issues.toLocaleString()} open issues
+                       </li>
                      </ul>
-                  </Card>
-               </li>
-            )
+                   </Card>
+                 </li>
+               );
          })}
       </ul>
    )
