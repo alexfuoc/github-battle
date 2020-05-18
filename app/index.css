@@ -104,17 +104,20 @@ li {
    border-radius: 3px;
 }
 
-.card {
+.card 
+{
    margin: 10px 0;
    width: 250px;
    padding: 20px;
 }
 
-.card a {
+.card 
+a {
    text-decoration: none;
 }
 
-.card img {
+.card 
+img {
    margin-bottom: 8px;
 }
 

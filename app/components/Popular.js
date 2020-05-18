@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { fetchPopularRepos } from '../utils/api'
 import { FaGithub, FaJs, FaJava, FaCss3Alt, FaPython, FaUser, FaStar, FaCodeBranch, FaExclamationTriangle } from "react-icons/fa";
 import { GoRuby } from "react-icons/go";
+import Card from './Card';
 
 function LanguagesNav({selected, onUpdateLanguage}){
    const languages = ['All', 'Javascript', 'Java', 'CSS', 'Python', 'Ruby'];
@@ -35,18 +36,13 @@ function ReposGrid({ repos }) {
                const {name, owner, html_url, stargazers_count, forks, open_issues } = repo
                const {login, avatar_url} = owner
                return(
-                  <li key={html_url} className ='card bg-light'>
-                     <h4 className='center-text header-lg'>
-                        #{index + 1}
-                     </h4>
-                     <img 
-                        className='avatar' 
-                        src={avatar_url}
-                        alt={`Avatar for ${login}`}
-                     />
-                     <h2 className = 'center-text'>
-                        <a className = 'link' href={html_url}>{login}</a>
-                     </h2>
+                  <li key={html_url}>
+                  <Card
+                     header={`#${index + 1}`}
+                     avatar={avatar_url}
+                     href={html_url}
+                     name={login}
+                  >
                      <ul className='cardList'>
                         <li>
                            <FaUser color='rgb(255, 191, 116)' size={22}/>
@@ -67,10 +63,11 @@ function ReposGrid({ repos }) {
                            {open_issues.toLocaleString()} open issues
                         </li>
                      </ul>
-                  </li>
-               )
-            })}
-         </ul>
+                  </Card>
+               </li>
+            )
+         })}
+      </ul>
    )
 }
 
