@@ -16,6 +16,12 @@ li {
    list-style-type: none;
 }
 
+.dark {
+   color: #DADADA;
+   background-color: #1c2020;
+   min-height: 100%;
+}
+
 .container {
    max-width: 1200px;
    margin: 0 auto;
@@ -104,6 +110,10 @@ li {
    border-radius: 3px;
 }
 
+.bg-dark {
+   background-color:rgb(36, 40, 42);
+   border-radius: 3px;
+}
 .card 
 {
    margin: 10px 0;
@@ -181,6 +191,11 @@ img {
    background: rgba(0, 0, 0, 0.02);
 }
 
+.player-inputs .input-dark{
+   color: #DADADA;
+   background: rgba(0, 0, 0, 0.3);
+}
+
 .player-inputs button{
    flex: 1;
    margin-left: 10px;
@@ -209,6 +224,16 @@ img {
 .btn-dark:disabled {
    background-color: #f2f2f2;
    color: #c7c7c7;
+}
+
+.btn-light {
+   color: #000;
+   background-color: #aaa8a8;
+}
+
+.btn-light:disabled {
+   background-color: #292929;
+   color: #4a4a4a;
 }
 
 .players-container {
