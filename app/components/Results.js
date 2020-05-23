@@ -14,6 +14,8 @@ import Loading from './Loading';
 import ToolTip from './Tooltip';
 import withHover from './withHover';
 import { ThemeConsumer } from "../contexts/theme";
+import queryString from 'query-string'
+import { Link } from 'react-router-dom'
 
 
 function ProfileList ({ profile }){
@@ -72,7 +74,7 @@ export default class Results extends React.Component {
    }
 
    componentDidMount() {
-      const { playerOne, playerTwo, onReset } = this.props
+      const { playerOne, playerTwo } = queryString.parse(this.props.location.search);
 
       battle( [playerOne, playerTwo] )
          .then((players) => {
@@ -124,20 +126,14 @@ export default class Results extends React.Component {
                 </Card>
               </div>
 
-              <button
-                onClick={this.props.onReset}
+              <Link
+                to='/battle'
                 className={`btn ${theme === "dark" ? "btn-light" : "btn-dark"} btn-space`}>
                 Reset
-              </button>
+              </Link>
             </React.Fragment>
           )}
         </ThemeConsumer>
       );
    }
-}
-
-Results.propTypes = {
-  playerOne: PropTypes.string.isRequired,
-  playerTwo: PropTypes.string.isRequired,
-  onReset: PropTypes.func.isRequired,
 }
